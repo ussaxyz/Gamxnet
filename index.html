@@ -15,22 +15,41 @@ Your IP address has been logged for security purposes.
 <html lang="en">
 <head>
   <script>
+  // Stronger code protection
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.onkeydown = function(e) {
+    // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (e.key === "F12" || 
+        (e.ctrlKey && e.shiftKey && e.key === "I") || 
+        (e.ctrlKey && e.shiftKey && e.key === "J") ||
+        (e.ctrlKey && e.key === "u")) {
+      return false;
+    }
+  };
+  
+  // Prevent viewing source
+  window.onload = function() {
+    document.body.oncontextmenu = function() { return false; };
+    document.body.onselectstart = function() { return false; };
+    document.body.ondragstart = function() { return false; };
+  };
+</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4143839749025019"
      crossorigin="anonymous"></script>
   <!-- Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <meta name="description" content="modXnet.com - Download the latest Games for free. Premium modded games for Android & iOS including GTA 5 Mobile, BeamNG.drive, Assetto Corsa and more.">
-  <meta name="keywords" content="modded games, mobile games, modXnet.com, download games, BeamNG.drive, GTA 5 Mobile, Assetto Corsa Mobile">
-  <meta property="og:title" content="modXnet.com - Download Latest Modded Games">
+  <meta name="description" content="gamXnet.com - Download the latest Games for free. Premium modded games for Android & iOS including GTA 5 Mobile, BeamNG.drive, Assetto Corsa and more.">
+  <meta name="keywords" content="modded games, mobile games, GamXnet.com, download games, BeamNG.drive, GTA 5 Mobile, Assetto Corsa Mobile">
+  <meta property="og:title" content="GamXnet.com - Download Latest Modded Games">
   <meta property="og:description" content="Download the latest modded games for mobile. Experience premium mods and exclusive features.">
   <meta property="og:image" content="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png">
-  <meta property="og:url" content="https://www.modXnet.com">
+  <meta property="og:url" content="https://www.GamXnet.com">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#121212">
   <link rel="manifest" href="/manifest.json">
   
-  <title>ModXnet.com - Download Latest Premium Games</title>
+  <title>GamXnet.com - Download Latest Premium Games</title>
   
   <!-- Favicon -->
   <link href="favicon.ico" type="image/x-icon" rel="icon" />
@@ -542,108 +561,6 @@ Your IP address has been logged for security purposes.
       color: var(--secondary);
     }
     
-    /* Contact Us Section - Replaced Testimonials */
-    .contact-section {
-      padding: 30px 16px;
-      background: var(--darker);
-    }
-    
-    .contact-container {
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .contact-btn {
-      background: var(--primary);
-      color: var(--dark);
-      padding: 12px 24px;
-      border: none;
-      border-radius: var(--border-radius);
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      display: inline-block;
-      margin: 0 auto;
-    }
-    
-    .contact-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 255, 204, 0.3);
-    }
-    
-    #contactForm {
-      display: none;
-      margin-top: 25px;
-      background: var(--light);
-      padding: 25px;
-      border-radius: var(--border-radius);
-      border: 1px solid rgba(255,255,255,0.05);
-      box-shadow: var(--box-shadow);
-    }
-    
-    #contactForm h2 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    
-    .form-group {
-      margin-bottom: 15px;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--text);
-      font-size: 0.9rem;
-    }
-    
-    .form-control {
-      width: 100%;
-      padding: 12px 15px;
-      background: var(--darker);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--border-radius);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      transition: var(--transition);
-    }
-    
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.2);
-    }
-    
-    textarea.form-control {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    .submit-btn {
-      background: var(--primary);
-      color: var(--dark);
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: var(--border-radius);
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      margin-top: 10px;
-    }
-    
-    .submit-btn:hover {
-      background: #00e6b8;
-    }
-    
-    .error {
-      color: var(--danger);
-      font-size: 0.75rem;
-      margin-top: 5px;
-      display: block;
-    }
     
     /* Newsletter */
     .newsletter {
@@ -1436,9 +1353,9 @@ Your IP address has been logged for security purposes.
   <header class="header">
     <nav class="nav-container">
       <a href="index.html" class="logo">
-        <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="modXnet.com Logo" loading="lazy">
+        <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="GamXnet.com Logo" loading="lazy">
         <div class="logo-text">
-          <span>ModXnet.com</span>
+          <span>GamXnet.com</span>
           <small>Unlock Premium Games</small>
         </div>
       </a>
@@ -1468,12 +1385,7 @@ Your IP address has been logged for security purposes.
           <i class="fas fa-search"></i>
         </div>
         
-        <div class="auth-buttons">
-          <button class="btn btn-outline" id="loginBtn">Login</button>
-          <button class="btn btn-primary" id="registerBtn">Register</button>
-        </div>
-      </div>
-      
+        
       <div class="menu-icon" id="menuToggle">
         <i class="fas fa-bars"></i>
       </div>
@@ -1558,7 +1470,7 @@ Your IP address has been logged for security purposes.
     <!-- Grid View (default) -->
     <div class="grid-view" id="gridView">
       <!-- BeamNG.drive -->
-      <div class="game-card-grid animate-in" data-game="beamng" data-link="https://modxnet.com/Beamng.drive">
+      <div class="game-card-grid animate-in" data-game="beamng" data-link="https://gamxnet.com/Beamng.drive">
         <img src="https://avatars.githubusercontent.com/u/6404024?s=280&v=4" alt="BeamNG.drive Mobile" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">BeamNG.drive Mobile</div>
@@ -1576,7 +1488,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- GTA 5 -->
-      <div class="game-card-grid animate-in delay-1" data-game="gta5" data-link="https://www.modxnet.com/GTA%205%20Mobile/">
+      <div class="game-card-grid animate-in delay-1" data-game="gta5" data-link="https://www.gamxnet.com/GTA%205%20Mobile/">
         <img src="https://i.pinimg.com/736x/8f/01/03/8f010359c57da7850e723fa17a53b55e.jpg" alt="GTA 5 Mobile" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">GTA V Mobile</div>
@@ -1594,7 +1506,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Assetto Corsa -->
-      <div class="game-card-grid animate-in delay-2" data-game="assetto" data-link="https://www.modxnet.com/Assetto%20Corsa/">
+      <div class="game-card-grid animate-in delay-2" data-game="assetto" data-link="https://www.gamxnet.com/Assetto%20Corsa/">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsv7-mEL1UXJbWJNZMtkffQzMXXZWYoOD8zw&s" alt="Assetto Corsa Mobile" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">Assetto Corsa Mobile</div>
@@ -1612,7 +1524,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Forza Horizon 5 -->
-      <div class="game-card-grid animate-in delay-3" data-game="forza" data-link="https://modxnet.com/Forza-horizon5">
+      <div class="game-card-grid animate-in delay-3" data-game="forza" data-link="https://gamxnet.com/Forza-horizon5">
         <img src="https://images.seeklogo.com/logo-png/40/1/forza-horizon-5-logo-png_seeklogo-406612.png" alt="Forza Horizon 5 Mobile" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">Forza Horizon 5 Mobile</div>
@@ -1630,7 +1542,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Euro Truck Simulator -->
-      <div class="game-card-grid animate-in" data-game="eurotruck" data-link="https://modxnet.com/Euro-Truck-Simulator">
+      <div class="game-card-grid animate-in" data-game="eurotruck" data-link="https://gamxnet.com/Euro-Truck-Simulator">
         <img src="https://i.pinimg.com/564x/32/ae/e5/32aee5919f1c4e81da58627d21b3323a.jpg" alt="Euro Truck Simulator" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">Euro Truck Simulator 2 Mobile</div>
@@ -1648,7 +1560,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- CarX Street -->
-      <div class="game-card-grid animate-in delay-1" data-game="carx" data-link="https://modxnet.com/CarXstreet-Mod">
+      <div class="game-card-grid animate-in delay-1" data-game="carx" data-link="https://gamxnet.com/CarXstreet-Mod">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4pqJlpezWAKhl0bwwWy1GIc_zVOGXjHvz9Q&s" alt="CarX Street Mobile" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">CarX Street Mod</div>
@@ -1666,7 +1578,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Watch Dogs 2 -->
-      <div class="game-card-grid animate-in delay-2" data-game="watchdogs" data-link="https://modxnet.com/Watchdogs-2">
+      <div class="game-card-grid animate-in delay-2" data-game="watchdogs" data-link="https://gamxnet.com/Watchdogs-2">
         <img src="https://images.steamusercontent.com/ugc/180542583658076938/524D520DFF7C6671219DF93F38B195D435B93786/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Watch Dogs 2 Mobile" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">Watch Dogs 2 Mobile</div>
@@ -1684,7 +1596,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Rooftops & Alleys Mobile -->
-      <div class="game-card-grid animate-in delay-3" data-game="rooftops" data-link="https://modxnet.com/Rooftops&Alleys">
+      <div class="game-card-grid animate-in delay-3" data-game="rooftops" data-link="https://gamxnet.com/Rooftops&Alleys">
         <img src="https://i.postimg.cc/W1bm7TRt/Fh-T2ixl-Wyl9-TPswg-KLF0j-Pp9j-Nuq.png" alt="Rooftops & Alleys Mobile" class="game-thumbnail-grid" loading="lazy">
         <div class="game-info-grid">
           <div class="game-title-grid">Rooftops & Alleys Mobile</div>
@@ -1705,7 +1617,7 @@ Your IP address has been logged for security purposes.
     <!-- List View (hidden by default) -->
     <div class="list-view" id="listView">
       <!-- BeamNG.drive -->
-      <div class="game-card animate-in" data-game="beamng" data-link="https://modxnet.com/Beamng.drive">
+      <div class="game-card animate-in" data-game="beamng" data-link="https://gamxnet.com/Beamng.drive">
         <img src="https://avatars.githubusercontent.com/u/6404024?s=280&v=4" alt="BeamNG.drive Mobile" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">BeamNG.drive Mobile</div>
@@ -1723,7 +1635,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- GTA 5 -->
-      <div class="game-card animate-in delay-1" data-game="gta5" data-link="https://www.modxnet.com/GTA%205%20Mobile/">
+      <div class="game-card animate-in delay-1" data-game="gta5" data-link="https://www.gamxnet.com/GTA%205%20Mobile/">
         <img src="https://i.pinimg.com/736x/8f/01/03/8f010359c57da7850e723fa17a53b55e.jpg" alt="GTA 5 Mobile" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">Grand Theft Auto V Mobile</div>
@@ -1741,7 +1653,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Assetto Corsa -->
-      <div class="game-card animate-in delay-2" data-game="assetto" data-link="https://www.modxnet.com/Assetto%20Corsa/">
+      <div class="game-card animate-in delay-2" data-game="assetto" data-link="https://www.gamxnet.com/Assetto%20Corsa/">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsv7-mEL1UXJbWJNZMtkffQzMXXZWYoOD8zw&s" alt="Assetto Corsa Mobile" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">Assetto Corsa Mobile</div>
@@ -1759,7 +1671,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Forza Horizon 5 -->
-      <div class="game-card animate-in delay-3" data-game="forza" data-link="https://modxnet.com/Forza-horizon5">
+      <div class="game-card animate-in delay-3" data-game="forza" data-link="https://gamxnet.com/Forza-horizon5">
         <img src="https://images.seeklogo.com/logo-png/40/1/forza-horizon-5-logo-png_seeklogo-406612.png" alt="Forza Horizon 5 Mobile" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">Forza Horizon 5 Mobile</div>
@@ -1777,7 +1689,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Euro Truck Simulator -->
-      <div class="game-card animate-in" data-game="eurotruck" data-link="https://modxnet.com/Euro-Truck-Simulator">
+      <div class="game-card animate-in" data-game="eurotruck" data-link="https://gamxnet.com/Euro-Truck-Simulator">
         <img src="https://i.pinimg.com/564x/32/ae/e5/32aee5919f1c4e81da58627d21b3323a.jpg" alt="Euro Truck Simulator" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">Euro Truck Simulator 2 Mobile</div>
@@ -1795,7 +1707,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- CarX Street -->
-      <div class="game-card animate-in delay-1" data-game="carx" data-link="https://modxnet.com/CarXstreet-Mod">
+      <div class="game-card animate-in delay-1" data-game="carx" data-link="https://gamxnet.com/CarXstreet-Mod">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4pqJlpezWAKhl0bwwWy1GIc_zVOGXjHvz9Q&s" alt="CarX Street Mobile" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">CarX Street Mod</div>
@@ -1813,7 +1725,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Watch Dogs 2 -->
-      <div class="game-card animate-in delay-2" data-game="watchdogs" data-link="https://modxnet.com/Watchdogs-2">
+      <div class="game-card animate-in delay-2" data-game="watchdogs" data-link="https://gamxnet.com/Watchdogs-2">
         <img src="https://images.steamusercontent.com/ugc/180542583658076938/524D520DFF7C6671219DF93F38B195D435B93786/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Watch Dogs 2 Mobile" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">Watch Dogs 2 Mobile</div>
@@ -1831,7 +1743,7 @@ Your IP address has been logged for security purposes.
       </div>
       
       <!-- Rooftops & Alleys Mobile -->
-      <div class="game-card animate-in delay-3" data-game="rooftops" data-link="https://modxnet.com/Rooftops&Alleys">
+      <div class="game-card animate-in delay-3" data-game="rooftops" data-link="https://gamxnet.com/Rooftops&Alleys">
         <img src="https://i.postimg.cc/W1bm7TRt/Fh-T2ixl-Wyl9-TPswg-KLF0j-Pp9j-Nuq.png" alt="Rooftops & Alleys Mobile" class="game-thumbnail" loading="lazy">
         <div class="game-info">
           <div class="game-title">Rooftops & Alleys Mobile</div>
@@ -1850,63 +1762,9 @@ Your IP address has been logged for security purposes.
     </div>
     
     <!-- View All Button -->
-    <a href="https://modxnet.com/All-Games" class="view-all-btn">
+    <a href="https://gamxnet.com/All-Games" class="view-all-btn">
       View All Games <i class="fas fa-chevron-right"></i>
     </a>
-  </section>
-
-  <!-- Contact Us Section -->
-  <section class="contact-section" id="contact">
-    <div class="section">
-      <div class="section-header">
-        <h2 class="title-section">Need Help?</h2>
-      </div>
-      <div class="contact-container">
-        <button class="contact-btn" id="contactBtn">
-          <i class="fas fa-envelope"></i> Contact Us
-        </button>
-        
-        <div id="contactForm">
-          <h2>Send us a message</h2>
-          <form id="form" onsubmit="return validateContactForm()">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Enter your name">
-              <span class="error" id="nameError"></span>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" class="form-control" placeholder="Enter your email">
-              <span class="error" id="emailError"></span>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" class="form-control" placeholder="How can we help you?"></textarea>
-              <span class="error" id="messageError"></span>
-            </div>
-            
-            <button type="submit" class="submit-btn">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <div class="newsletter-container">
-      <h2>Stay Updated</h2>
-      <p>Subscribe to get notified about new game releases and exclusive mods.</p>
-      
-      <form class="newsletter-form">
-        <input type="email" placeholder="Your email address" class="newsletter-input" required>
-        <button type="submit" class="newsletter-button">Subscribe</button>
-      </form>
-    </div>
   </section>
 
   <!-- Footer -->
@@ -1914,8 +1772,8 @@ Your IP address has been logged for security purposes.
     <div class="footer-grid">
       <div class="footer-section">
         <div class="footer-logo">
-          <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="modXnet.com Logo" loading="lazy">
-          <span>modXnet.com</span>
+          <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="GamXnet.com Logo" loading="lazy">
+          <span>GamXnet.com</span>
         </div>
         <div class="footer-about">
           <p>Your premier destination for premium modded games. We provide safe, tested mods for the best gaming experience.</p>
@@ -1953,8 +1811,8 @@ Your IP address has been logged for security purposes.
       <div class="footer-section">
         <h3>Contact Info</h3>
         <div class="footer-contact">
-          <p><i class="fas fa-envelope"></i> support@modXnet.com</p>
-          <p><i class="fas fa-globe"></i> www.modXnet.com</p>
+          <p><i class="fas fa-envelope"></i> support@GamXnet.com</p>
+          <p><i class="fas fa-globe"></i> www.gamxnet.com</p>
           <p><i class="fas fa-map-marker-alt"></i> 123 Gaming Street, Digital City</p>
         </div>
       </div>
@@ -1962,7 +1820,7 @@ Your IP address has been logged for security purposes.
     
     <div class="footer-bottom">
       <div class="footer-copyright">
-        &copy; 2025 <a href="index.html">modXnet.com</a>. All Rights Reserved.
+        &copy; 2025 <a href="index.html">GamXnet.com</a>. All Rights Reserved.
       </div>
       <div class="dl-verified">
         <i class="fas fa-shield-alt"></i>
