@@ -2261,6 +2261,23 @@ Your IP address has been logged for security purposes.
     // Initialize animations
     animateOnScroll();
   </script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // إيجاد كل الأزرار التي فيها نص "Back To Home"
+  var buttons = Array.from(document.querySelectorAll('button, a')).filter(el =>
+    el.textContent.trim().toLowerCase() === 'back to home'
+  );
+
+  buttons.forEach(function(btn) {
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'index.html'; // اضبط اسم الصفحة الرئيسية هنا
+    });
+  });
+});
+</script>
+
 </body>
 </html>
 <!-- 
