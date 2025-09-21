@@ -2219,29 +2219,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-
-<script>
-// منع Ctrl+U (عرض كود المصدر)، و F12 (أدوات المطورين)
-document.addEventListener("keydown", function(e) {
-  if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.key.toLowerCase() === "u") ||
-    (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i")
-  ) {
-    e.preventDefault();
-    alert("❌ الوصول إلى كود الصفحة ممنوع!");
-  }
-});
-
-// منع الزر الأيمن بالماوس (اختياري، لكن يمكن تخليه)
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-  // بدون رسالة لتجنب إزعاج المستخدم
-});
-</script>
-
-
-  
 </body>
 </html>
 <!-- 
