@@ -1344,6 +1344,37 @@ Your IP address has been logged for security purposes.
         grid-template-columns: repeat(5, 1fr);
       }
     }
+    html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.grid-view, .games-list, .all-games-grid, .footer-grid {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin-left: 0;
+  margin-right: 0;
+}
+.game-thumbnail-grid, .game-thumbnail, .all-game-img, .game-detail-screenshot {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.mobile-menu,
+.modal {
+  max-width: 100vw;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+}
+.game-detail-screenshots {
+  max-width: 100vw;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
   </style>
 </head>
 <body>
@@ -2187,13 +2218,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-</script>
-<script>
-  document.addEventListener("touchmove", function(event) {
-    if (window.scrollX !== 0) {
-      window.scrollTo(0, window.scrollY); // يبقا ديما تابت بلا ميلان
-    }
-  }, { passive: false });
 </script>
 </body>
 </html>
