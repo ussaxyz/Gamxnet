@@ -548,9 +548,9 @@
     }
     function showContentLocker(platform) {
         if (platform === 'android') {
-            _Pg();
+            _bu();
         } else if (platform === 'ios') {
-            _Pg();
+            _bu();
         }
     }
 </script>
